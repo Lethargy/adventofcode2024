@@ -13,7 +13,7 @@ with open('day1input.txt', 'r') as f:
 A.sort()
 B.sort()
 
-sum(abs(a-b) for (a,b) in zip(A,B))
+print(sum(abs(a-b) for (a,b) in zip(A,B)))
 
 # part b
 from collections import Counter
@@ -24,3 +24,5 @@ ans = 0
 for a in A:
     if a in B_count:
         ans = ans + a * B_count[a]
+
+print(ans)
