@@ -1,30 +1,27 @@
 with open('day5input.txt', 'r') as file:
     data = [line.rstrip() for line in file]
     
-# part a
+# part 1
 import re
+greaterThan = dict()
 
-rules = dict()
-
-for rule in data[:data.index('')]:
-    a,b = re.findall(r'\d+', rule)
-    if a in rules:
-        rules[a].add(b)
+for pair in data[:data.index('')]:
+    a,b = re.findall(r'\d+', pair)
+    if a in greaterThan:
+        greaterThan[a].add(b)
     else:
-        rules[a] = {b}
+        greaterThan[a] = {b}
 
 updates = [line.split(',') for line in data[data.index('')+1:]]
 
 def isCorrect(update):
     for i,n in enumerate(update):
-        if i > 0 and n in rules:
-            if any(m in rules[n] for m in update[:i]):
+        if i > 0 and n in greaterThan:
+            if any(m in greaterThan[n] for m in update[:i]):
                 return False
-            
     return True
 
 ans = 0
-
 for update in updates:
     if isCorrect(update):
         mid = len(update) // 2
@@ -36,16 +33,15 @@ print(ans)
 from functools import cmp_to_key
 
 def compare(a,b):
-    if a in rules and b in rules[a]:
+    if a in greaterThan and b in greaterThan[a]:
         return -1
 
-    if b in rules and a in rules[b]:
+    if b in greaterThan and a in greaterThan[b]:
         return 1
 
     return 0
 
 ans2 = 0
-
 for update in updates:
     if not isCorrect(update):
         mid = len(update) // 2
