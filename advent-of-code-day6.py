@@ -43,9 +43,7 @@ print(len(visited))
 # part 2
 
 def isLoop(i_obs,j_obs):
-    k = 0
-    
-    i0 = i00; j0 = j00; d = '^'
+    i0 = i00; j0 = j00; d = '^'; k = 0
     visited  = {(i0,j0,d)}
     i1,j1 = next_step(i0,j0,d)
     
