@@ -28,7 +28,7 @@ d = directions[k % 4]
 visited = {(i00,j00)}
 i1,j1 = next_step(i00,j00,d)
 
-while (0 <= i1 <= n-1) and (0 <= j1 <= n-1):
+while (0 <= i1 <= n-1) and (0 <= j1 <= m-1):
     if room[i1][j1] != '#':
         visited.add((i1,j1))
         i0,j0 = i1,j1
