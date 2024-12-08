@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Dec  4 21:02:44 2024
-
-@author: luduc
-"""
 
 reports = []
-with open('day2input.txt', 'r') as f:
+with open('day02input.txt', 'r') as f:
     for line in f:
         reports.append([int(x) for x in line.split()])
         
