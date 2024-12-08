@@ -1,7 +1,7 @@
 # import data
 
 grid = []
-with open('day4input.txt', 'r') as file:
+with open('day04input.txt', 'r') as file:
     for line in file:
         grid.append(line.rstrip())
         
