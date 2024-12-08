@@ -3,7 +3,7 @@
 A = []
 B = []
 
-with open('day1input.txt', 'r') as f:
+with open('day01input.txt', 'r') as f:
     for line in f:
         num1, num2 = line.split()
         A.append(int(num1))
