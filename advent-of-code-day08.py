@@ -1,6 +1,6 @@
 # import and process
 
-with open('day8input.txt', 'r') as file:
+with open('day08input.txt', 'r') as file:
     city = [line.rstrip() for line in file]
     
 N = len(city)
