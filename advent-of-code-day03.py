@@ -2,7 +2,7 @@
 # import data
 
 string = ''
-with open('day3input.txt', 'r') as file:
+with open('day03input.txt', 'r') as file:
     for line in file:
         string = string + line
         
