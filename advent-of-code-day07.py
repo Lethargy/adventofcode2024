@@ -1,4 +1,4 @@
-with open('day7input.txt', 'r') as file:
+with open('day07input.txt', 'r') as file:
     data = [line.rstrip() for line in file]
     
 import re
