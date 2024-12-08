@@ -1,28 +1,20 @@
-# -*- coding: utf-8 -*-
-
-A = []
-B = []
+list1 = []
+list2 = []
 
 with open('day01input.txt', 'r') as f:
     for line in f:
         num1, num2 = line.split()
-        A.append(int(num1))
-        B.append(int(num2))
+        list1.append(int(num1))
+        list2.append(int(num2))
         
-# part a
-A.sort()
-B.sort()
+# part 1
+list1.sort()
+list2.sort()
 
-print(sum(abs(a-b) for (a,b) in zip(A,B)))
+print(sum(abs(n-m) for (n,m) in zip(list1,list2)))
 
-# part b
+# part 2
 from collections import Counter
+count2 = Counter(list2)
 
-B_count = Counter(B)
-ans = 0
-
-for a in A:
-    if a in B_count:
-        ans = ans + a * B_count[a]
-
-print(ans)
+print(sum(n * count2[n] for n in list1 if n in count2))
