@@ -1,4 +1,4 @@
-with open('day6input.txt', 'r') as file:
+with open('day06input.txt', 'r') as file:
     room = [line.rstrip() for line in file]
     
 # part 1
