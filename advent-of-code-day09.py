@@ -37,11 +37,10 @@ for i,c in enumerate(data):
     s = s + int(c)
     
 for i in reversed(range(len(blocks))):
-    b = blocks[i]; L = b[1]
+    b = blocks[i]
     for j,g in enumerate(gaps):
-        if g[1] >= L and g[0] < b[0]:
-            blocks[i] = [g[0],L]
-            gaps[j] = [g[0]+L,g[-1]-L]
+        if g[1] >= b[1] and g[0] < b[0]:
+            blocks[i], gaps[j] = [g[0], b[1]], [g[0]+b[1], g[-1]-b[1]]
             break
 
 ans = 0
