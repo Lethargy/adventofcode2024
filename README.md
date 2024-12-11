@@ -17,8 +17,8 @@ day 5 part 1 | sorting |
 day 5 part 2 | sorting |
 day 6 part 1| |
 day 6 part 2 | |
-day 7 part 1 | | backtracking
-day 7 part 2 | | backtracking
+day 7 part 1 | combinations | backtracking
+day 7 part 2 | combinations | backtracking
 day 8 part 1 | |
 day 8 part 2 | |
 day 9 part 1 | |
