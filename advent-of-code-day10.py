@@ -5,7 +5,7 @@ N = len(grid)
 M = len(grid[0])
 
 # part 1
-def score(i,j):
+def score(i: int, j: int) -> int:
     stack = [[(i,j)]]
     ans = 0
     peaks = []
@@ -31,7 +31,7 @@ def score(i,j):
 print(sum(score(i,j) for i in range(N) for j in range(M) if grid[i][j] == '0'))
 
 # part 2
-def rating(i,j):
+def rating(i: int, j: int) -> int:
     stack = [[(i,j)]] # path and height
     ans = 0
     
