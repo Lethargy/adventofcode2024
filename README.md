@@ -9,7 +9,7 @@ Structure of repository is kept intentionally simple.
 2 | |
 3 | |
 4 | |
-5 | |
+5 | soting | sorting
 6 | |
 7 | backtracking | backtracking
 8 | |
