@@ -15,8 +15,8 @@ print(sum(isSafe(report) for report in reports))
 def canBeSafe(report: list[int]) -> bool:
     for i in range(len(report)):
         if isSafe(report[:i] + report[i+1:]):
-            return 1
+            return True
 
-    return 0
+    return False
 
 print(sum(isSafe(report) or canBeSafe(report) for report in reports))
