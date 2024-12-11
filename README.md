@@ -25,11 +25,9 @@ Structure of repository is kept intentionally simple.
         <tr>
             <td rowspan=2> 2 </td>
             <td> 1</td>
-            <td> sorting </td>
         </tr>
         <tr>
             <td> 2 </td>
-            <td> sorting </td>
         </tr>
         <tr>
             <td rowspan=2> 3 </td>
