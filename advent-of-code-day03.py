@@ -9,7 +9,7 @@ with open('day03input.txt', 'r') as file:
 # part a
 import re
 
-def sum_mul(s):
+def sum_mul(s: str) -> int:
     ans = 0
     for a in re.findall(r'mul\(\d+,\d+\)', s):
         n, m = re.findall(r'\d+', a)
