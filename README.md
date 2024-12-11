@@ -8,7 +8,7 @@ Structure of repository is kept intentionally simple.
         <tr>
             <th>day</th>
             <th>part</th>
-            <th>problem</th>
+            <th>category</th>
             <th>algorithm</th>
         </tr>
     </thead>
@@ -100,6 +100,17 @@ Structure of repository is kept intentionally simple.
             <td> 2 </td>
             <td> word search </td>
             <td> backtracking </td>
+        </tr>
+        <tr>
+            <td rowspan=2> 11 </td>
+            <td> 1 </td>
+            <td> </td>
+            <td> queuing </td>
+        </tr>
+        <tr>
+            <td> 2 </td>
+            <td> </td>
+            <td> BFS </td>
         </tr>
     </tbody>
 </table>
