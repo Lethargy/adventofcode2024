@@ -20,6 +20,7 @@ for r,row in enumerate(room):
     if '^' in row:
         i00 = r
         j00 = row.index('^')
+        break
         
 directions = ['^','>','v','<']
 
