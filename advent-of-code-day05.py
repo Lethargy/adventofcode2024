@@ -14,7 +14,7 @@ for pair in data[:data.index('')]:
 
 updates = [line.split(',') for line in data[data.index('')+1:]]
 
-def isCorrect(update):
+def isCorrect(update: list[str]) -> bool:
     for i,n in enumerate(update):
         if i > 0 and n in greaterThan:
             if any(m in greaterThan[n] for m in update[:i]):
@@ -32,7 +32,7 @@ print(ans)
 # part 2
 from functools import cmp_to_key
 
-def compare(a,b):
+def compare(a: str, b: str) -> int:
     if a in greaterThan and b in greaterThan[a]:
         return -1
 
