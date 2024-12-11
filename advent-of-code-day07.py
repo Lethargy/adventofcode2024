@@ -7,44 +7,48 @@ input = [[int(x) for x in re.findall(r'\d+',line)] for line in data]
 
 # part 1
 
-def recursive_backtrack(n,i,line):
-    if i == len(line) - 1:
-        if n == line[0]:
-            return True
-        else:
-            return False
-
-    if n > line[0]:
-        return False
-
-    mul = recursive_backtrack(n * line[i+1], i+1, line)
-    add = recursive_backtrack(n + line[i+1], i+1, line)
+def couldBeTrue(line: list[int]) -> bool:
+    stack = [(line[1],1)]
     
-    return mul or add
+    while stack:
+        n,i = stack.pop()
 
-def couldBeTrue(line):
-    return recursive_backtrack(line[1], 1, line)
+        if i == len(line) - 1:
+            if n == line[0]:
+                return True
+            continue
+
+        if n > line[0]:
+            continue
+
+        stack.append((n * line[i+1], i+1))
+        stack.append((n + line[i+1], i+1))
+
+    return False
 
 print(sum(line[0] for line in input if couldBeTrue(line)))
 
 # part 2
 
-def recursive_backtrack2(n,i,line):
-    if i == len(line) - 1:
-        if n == line[0]:
-            return True
-        else:
-            return False
+def couldBeTrue2(line: list[int]) -> bool:
+    target = line[0]
+    stack = [(line[1],1)]
+    
+    while stack:
+        n,i = stack.pop()
 
-    if n > line[0]:
-        return False
+        if i == len(line) - 1:
+            if n == target:
+                return True
+            continue
 
-    mul = recursive_backtrack2(n * line[i+1], i+1, line)
-    add = recursive_backtrack2(n + line[i+1], i+1, line)
-    con = recursive_backtrack2(int(str(n) + str(line[i+1])), i+1, line)
-    return mul or add or con
+        if n > target:
+            continue
 
-def couldBeTrue2(line):
-    return recursive_backtrack2(line[1], 1, line)
+        stack.append((n * line[i+1], i+1))
+        stack.append((n + line[i+1], i+1))
+        stack.append((int(str(n) + str(line[i+1])), i+1))
+
+    return False
 
 print(sum(line[0] for line in input if couldBeTrue2(line)))
