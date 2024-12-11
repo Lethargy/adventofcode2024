@@ -7,7 +7,7 @@ with open('day04input.txt', 'r') as file:
         
 # part 1
 
-def match(i,j,k,d):
+def match(i: int, j: int, k: int, d: str) -> None:
     if i < 0 or j < 0 or i == n or j == n:
         return None
 
