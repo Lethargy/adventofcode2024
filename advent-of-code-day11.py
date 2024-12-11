@@ -4,7 +4,7 @@ with open('day11input.txt', 'r') as file:
     
 from math import log10
 
-def stoneCount(initArr,blinks):
+def stoneCount(initArr: list[int], blinks: int) -> int:
     nums = {n: initArr.count(n) for n in initArr} # {number: count}
     newNums = {}
     
