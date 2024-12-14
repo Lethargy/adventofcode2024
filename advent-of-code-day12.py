@@ -45,7 +45,7 @@ def countFences(i,j):
 print(sum(sum(countFences(r,c) for r,c in region) * len(region)
           for region in regions))
 
-# part 1d
+# part 2
 def countVertices(i,j):
     n = grid[i-1][j] if i>0 else None
     s = grid[i+1][j] if i+1<N else None
