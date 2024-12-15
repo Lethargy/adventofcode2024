@@ -8,14 +8,19 @@ L = len(input)
 # part 1
 import re
 
-X = []; Y = []; dX = []; dY = []
+def getInitialPosition(input):
+    X = []; Y = []; dX = []; dY = []
+    
+    for line in input:
+        x,y,dx,dy = re.findall(r'-?\d+', line)
+        X.append(int(x))
+        Y.append(int(y))
+        dX.append(int(dx))
+        dY.append(int(dy))
 
-for line in input:
-    x,y,dx,dy = re.findall(r'-?\d+', line)
-    X.append(int(x))
-    Y.append(int(y))
-    dX.append(int(dx))
-    dY.append(int(dy))
+    return X,Y,dX,dY
+
+X,Y,dX,dY = getInitialPosition(input)
 
 for _ in range(100):
     for i in range(L):
@@ -39,15 +44,6 @@ for i in range(L):
 print(ne * nw * sw * se)
 
 # part 2
-X = []; Y = []; dX = []; dY = []
-
-for line in input:
-    x,y,dx,dy = re.findall(r'-?\d+', line)
-    X.append(int(x))
-    Y.append(int(y))
-    dX.append(int(dx))
-    dY.append(int(dy))
-
 def biggestCluster(coordinates):
     out = 0
     
@@ -67,6 +63,7 @@ def biggestCluster(coordinates):
         out = max(out,nPoints)
     return out
 
+X,Y,dX,dY = getInitialPosition(input)
 C = {(x,y) for x,y in zip(X,Y)}
 iteration = 0
 
