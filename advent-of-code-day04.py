@@ -1,12 +1,7 @@
-# import data
-
-grid = []
 with open('day04input.txt', 'r') as file:
-    for line in file:
-        grid.append(line.rstrip())
+    grid = file.read().splitlines()
         
 # part 1
-
 def match(i: int, j: int, k: int, d: str) -> None:
     if i < 0 or j < 0 or i == n or j == n:
         return None
@@ -49,7 +44,6 @@ for i,row in enumerate(grid):
 print(ans)
 
 # part 2
-
 ans2 = 0
 
 for i in range(1,n-1):
