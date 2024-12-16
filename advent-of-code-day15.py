@@ -42,7 +42,8 @@ for d in movements:
             if not stack:
                 curr = (ni,nj)
 
-print(sum(100*i+j for i in range(N) for j in range(M) if room[i][j] == 'O'))
+print(sum(100*i+j for i in range(N)
+          for j in range(M) if room[i][j] == 'O'))
 
 # part 2
 
@@ -113,4 +114,5 @@ for d in movements:
             if not stack:
                 curr = (ni,nj)
 
-print(sum(100*min(i,M-2-i)+j for i in range(N) for j in range(M) if room[i][j] == '['))
+print(sum(100*min(i,M-2-i)+j for i in range(N)
+          for j in range(M) if room[i][j] == '['))
