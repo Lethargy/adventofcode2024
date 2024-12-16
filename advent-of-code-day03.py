@@ -1,15 +1,10 @@
-
-# import data
-
-string = ''
 with open('day03input.txt', 'r') as file:
-    for line in file:
-        string = string + line
+    string = file.read()
         
-# part a
+# part 1
 import re
 
-def sum_mul(s: str) -> int:
+def sum_mul(s):
     ans = 0
     for a in re.findall(r'mul\(\d+,\d+\)', s):
         n, m = re.findall(r'\d+', a)
@@ -19,7 +14,7 @@ def sum_mul(s: str) -> int:
 
 print(sum_mul(string))
 
-# part b
+# part 2
 temp = 'do()' + string + 'don\'t()'
 ans = 0
 
