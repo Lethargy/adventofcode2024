@@ -46,15 +46,12 @@ print(sum(100*i+j for i in range(N)
           for j in range(M) if room[i][j] == 'O'))
 
 # part 2
-
 from collections import deque
 
-# dimensions of room
-N = input.index('')
+N = input.index('') # dimensions of room
 M = 2 * len(input[0])
 
-# create room
-room = [[] for _ in range(N)]
+room = [[] for _ in range(N)] # create room
 
 for i in range(N):
     for j in range(len(input[0])):
