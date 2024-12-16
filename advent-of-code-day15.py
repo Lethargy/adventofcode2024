@@ -26,7 +26,6 @@ M = len(input[0])
 
 room = [list(line) for line in input[:N]] # create room
 movements = ''.join(input[N:])
-
 curr = findRobot(room)
 
 for d in movements:
@@ -67,8 +66,8 @@ for i in range(N):
         elif input[i][j] == '@':
             room[i].extend(('@','.'))
 
-curr = findRobot(room)
 movements = ''.join(input[N:])
+curr = findRobot(room)
 
 for d in movements:
     if d == '<' or d == '>': # similar to part 1
