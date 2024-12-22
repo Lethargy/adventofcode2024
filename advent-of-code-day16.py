@@ -41,8 +41,6 @@ while Q:
             ds = 1
         elif abs(n - k) == 1 or abs(n - k) == 3:
             ds = 1001
-        else:
-            continue
         
         if s + ds <= scores[((r,c),n)]:
             scores[((r,c),n)] = s + ds
@@ -74,8 +72,6 @@ while Q:
             ds = 1
         elif abs(n - k) == 1 or abs(n - k) == 3:
             ds = 1001
-        else:
-            continue
         
         if s + ds <= scores[((r,c),n)]:
             scores[((r,c),n)] = s + ds
