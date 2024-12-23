@@ -1,5 +1,5 @@
 with open('day13input.txt', 'r') as file:
-    input = [line.rstrip() for line in file]
+    input = file.read().splitlines()
     
 # part 1
 import re
