@@ -121,12 +121,12 @@ Structure of repository is kept intentionally simple.
         <tr> <!-- day 13 -->
             <td rowspan=2> 13 </td>
             <td> 1 </td>
-            <td> </td>
+            <td> linear algebra </td>
             <td> </td>
         </tr>
         <tr>
             <td> 2 </td>
-            <td> </td>
+            <td> linear algebra </td>
             <td> </td>
         </tr>
         <tr> <!-- day 14 -->
