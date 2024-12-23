@@ -6,12 +6,17 @@ Structure of repository is kept intentionally simple.
 <table>
     <thead>
         <tr>
-            <th>day</th>             <th>part</th>         <th>category</th>         <th>algorithm</th>
+            <th>day</th>
+            <th>part</th>
+            <th> problem type </th>
+            <th>algorithm</th>
         </tr>
     </thead>
     <tbody>
         <tr>  <!-- day 1 -->
-            <td rowspan=2> 1 </td>     <td> 1</td>         <td> sorting </td>
+            <td rowspan=2> 1 </td>
+            <td> 1</td>
+            <td> sorting </td>
         </tr>
         <tr>  <!-- day 2 -->
             <td> 2 </td>
