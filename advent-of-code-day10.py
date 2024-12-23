@@ -1,5 +1,5 @@
 with open('day10input.txt', 'r') as file:
-    grid = [line.rstrip() for line in file]
+    grid = file.read().splitlines()
 
 N = len(grid)
 M = len(grid[0])
