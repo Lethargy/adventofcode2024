@@ -34,7 +34,7 @@ Q = [(0, S, 0)] # priority queue
 while Q:
     s, (i,j), k = heappop(Q) # score, (i,j), and direction index
     
-    for n in range(4):
+    for n in range(4): # loop over 4 directions
         r = i + d[n][0]
         c = j + d[n][1]
         
@@ -62,11 +62,13 @@ m = min(scores[(E,k)] for k in range(4))
 print(m)
 
 # part 2
-queue = [(E,k) for k in range(4) if scores[(E,k)] == m]
+from collections import deque
+
+queue = deque([(E,k) for k in range(4) if scores[(E,k)] == m])
 squares = set()
 
 while queue:
-    square, direction = queue.pop(0)
+    square, direction = queue.popleft()
     squares.add(square)
     
     if (square, direction) == (S,0):
