@@ -6,10 +6,7 @@ Structure of repository is kept intentionally simple.
 <table>
     <thead>
         <tr>
-            <th>day</th>
-            <th>part</th>
-            <th>category</th>
-            <th>algorithm</th>
+            <th>day</th> <th>part</th> <th>category</th> <th>algorithm</th>
         </tr>
     </thead>
     <tbody>
