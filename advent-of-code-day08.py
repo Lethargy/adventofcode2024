@@ -1,7 +1,5 @@
-# import and process
-
 with open('day08input.txt', 'r') as file:
-    city = [line.rstrip() for line in file]
+    city = file.read().splitlines()
     
 N = len(city)
 M = len(city[0])
