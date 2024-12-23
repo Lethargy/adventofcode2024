@@ -1,5 +1,5 @@
 with open('day06input.txt', 'r') as file:
-    room = [line.rstrip() for line in file]
+    room = file.read().splitlines()
     
 # part 1
 
