@@ -1,10 +1,12 @@
 with open('day16input.txt', 'r') as file:
     room = file.read().splitlines()
     
-# part 1
+# initialize    
+
 N = len(room)
 M = len(room[0])
 scores = {}
+previous = {}
 
 for i in range(N):
     for j in range(M):
@@ -13,6 +15,7 @@ for i in range(N):
         
         for k in range(4):
             scores[((i,j),k)] = float('inf')
+            previous[((i,j),k)] = set()
             
         if room[i][j] == 'S':
             S = (i,j)
@@ -22,14 +25,16 @@ for i in range(N):
             
 scores[(S,0)] = 0
 
+# Dijkstra
+
 from heapq import heappop, heappush
 
 d = [(0,1),(1,0),(0,-1),(-1,0)] # directions
-Q = [(0, S, 0)] # priority queue: score, (i,j), and direction index
+Q = [(0, S, 0)] # priority queue
 
 while Q:
-    s, (i,j), k = heappop(Q)
-
+    s, (i,j), k = heappop(Q) # score, (i,j), and direction index
+    
     for n in range(4):
         r = i + d[n][0]
         c = j + d[n][1]
@@ -41,40 +46,29 @@ while Q:
             ds = 1
         elif abs(n - k) == 1 or abs(n - k) == 3:
             ds = 1001
+        else:
+            continue
         
-        if s + ds <= scores[((r,c),n)]:
+        if s + ds < scores[((r,c),n)]:
             scores[((r,c),n)] = s + ds
+            previous[((r,c),n)] = {((i,j),k)}
+            heappush(Q, (s + ds,(r,c),n))
+        elif s + ds == scores[((r,c),n)]:
+            scores[((r,c),n)] = s + ds
+            previous[((r,c),n)].add(((i,j),k))
             heappush(Q, (s + ds,(r,c),n))
         
-print(min(scores[(E,k)] for k in range(4)))
+# part 1
+m = min(scores[(E,k)] for k in range(4))
+print(m)
 
 # part 2
-
-m = min(scores[(E,k)] for k in range(4)) # answer from part 1
-Q = [(0, S, {S}, 0)] # priority queue: score, (i,j), path, and direction index
+queue = [(E,k) for k in range(4) if scores[(E,k)] == m]
 squares = set()
 
-while Q:
-    s, (i,j), p, k = heappop(Q) # score, (i,j), and direction index
+while queue:
+    square, direction = queue.pop(0)
+    squares.add(square)
+    queue.extend(previous[(square, direction)])
     
-    if (i,j) == E and s == m:
-        squares.update(p)
-        continue
-    
-    for n in range(4):
-        r = i + d[n][0]
-        c = j + d[n][1]
-        
-        if ((r,c),n) not in scores:
-            continue
-        
-        if n == k:
-            ds = 1
-        elif abs(n - k) == 1 or abs(n - k) == 3:
-            ds = 1001
-        
-        if s + ds <= scores[((r,c),n)]:
-            scores[((r,c),n)] = s + ds
-            heappush(Q, (s + ds,(r,c),p|{(r,c)},n))
-        
 print(len(squares))
