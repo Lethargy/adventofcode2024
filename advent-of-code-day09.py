@@ -1,7 +1,5 @@
-data = ''
 with open('day09input.txt', 'r') as file:
-    for line in file:
-        data = data + line
+    data = file.read()
         
 # part 1
 # credit to Riley Thomp (https://github.com/rileythomp/adventofcode/blob/master/2024/9/main.py)
