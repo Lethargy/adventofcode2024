@@ -154,13 +154,24 @@ Structure of repository is kept intentionally simple.
         <tr> <!-- day 16 -->
             <td rowspan=2> 16 </td>
             <td> 1 </td>
-            <td> </td>
-            <td> </td>
+            <td> shortest path </td>
+            <td> Dijkstra </td>
         </tr>
         <tr>
             <td> 2 </td>
-            <td> </td>
-            <td> </td>
+            <td> shortest path </td>
+            <td> Dijkstra </td>
+        </tr>
+        <tr> <!-- day 23 -->
+            <td rowspan=2> 23 </td>
+            <td> 1 </td>
+            <td> cycles of 3 nodes </td>
+            <td> BFS </td>
+        </tr>
+        <tr>
+            <td> 2 </td>
+            <td> maximal clique </td>
+            <td> Bron Kerbosch </td>
         </tr>
     </tbody>
 </table>
