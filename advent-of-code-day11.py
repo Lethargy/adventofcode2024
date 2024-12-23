@@ -1,6 +1,5 @@
 with open('day11input.txt', 'r') as file:
-    line = next(file)
-    initArr = [int(n) for n in line.split()]
+    initArr = [int(n) for n in file.read().split()]
     
 from math import log10
 
