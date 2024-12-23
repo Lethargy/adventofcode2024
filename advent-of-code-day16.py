@@ -5,8 +5,8 @@ with open('day16input.txt', 'r') as file:
 
 N = len(room)
 M = len(room[0])
-scores = {}
-previous = {}
+scores = dict()
+previous = dict()
 
 for i in range(N):
     for j in range(M):
@@ -15,7 +15,6 @@ for i in range(N):
         
         for k in range(4):
             scores[((i,j),k)] = float('inf')
-            previous[((i,j),k)] = set()
             
         if room[i][j] == 'S':
             S = (i,j)
@@ -52,11 +51,11 @@ while Q:
         if s + ds < scores[((r,c),n)]:
             scores[((r,c),n)] = s + ds
             previous[((r,c),n)] = {((i,j),k)}
-            heappush(Q, (s + ds,(r,c),n))
+            heappush(Q, (s + ds, (r,c), n))
         elif s + ds == scores[((r,c),n)]:
             scores[((r,c),n)] = s + ds
             previous[((r,c),n)].add(((i,j),k))
-            heappush(Q, (s + ds,(r,c),n))
+            heappush(Q, (s + ds, (r,c), n))
         
 # part 1
 m = min(scores[(E,k)] for k in range(4))
@@ -69,6 +68,10 @@ squares = set()
 while queue:
     square, direction = queue.pop(0)
     squares.add(square)
+    
+    if (square, direction) == (S,0):
+        break
+    
     queue.extend(previous[(square, direction)])
     
 print(len(squares))
